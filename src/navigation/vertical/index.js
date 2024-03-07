@@ -10,6 +10,15 @@ import AccountPlusOutline from 'mdi-material-ui/AccountPlusOutline'
 import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
 
+// MUI Imports
+
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import TextField from '@mui/material/TextField'
+import DialogTitle from '@mui/material/DialogTitle'
+import DialogContent from '@mui/material/DialogContent'
+import DialogActions from '@mui/material/DialogActions'
+import DialogContentText from '@mui/material/DialogContentText'
 
 const navigation = () => {
   return [
@@ -54,14 +63,14 @@ const navigation = () => {
     },
 
     // {
-    //   title: 'Icons',
-    //   path: '/icons',
-    //   icon: GoogleCirclesExtended
+    // title: 'Icons',
+    // path: '/icons',
+    // icon: GoogleCirclesExtended
     // },
     // {
-    //   title: 'Cards',
-    //   icon: CreditCardOutline,
-    //   path: '/cards'
+    // title: 'Cards',
+    // icon: CreditCardOutline,
+    // path: '/cards'
     // },
     // {
     //   title: 'Tables',
@@ -75,5 +84,6 @@ const navigation = () => {
     // }
   ]
 }
+
 
 export default navigation
