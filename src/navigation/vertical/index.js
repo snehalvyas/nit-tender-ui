@@ -52,6 +52,7 @@ const navigation = () => {
       icon: Login,
       path: '/pages/login'
     },
+
     // {
     //   title: 'Icons',
     //   path: '/icons',
