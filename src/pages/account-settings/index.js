@@ -19,13 +19,21 @@ import LockOpenOutline from 'mdi-material-ui/LockOpenOutline'
 import InformationOutline from 'mdi-material-ui/InformationOutline'
 
 // ** Demo Tabs Imports
+import TabTenderConfig from 'src/views/account-settings/TabTenderConfig'
+import TabTenderDates from 'src/views/account-settings/TabTenderDates'
+import TabTerms from 'src/views/account-settings/TabTerms'
+import TabSAPdata from 'src/views/account-settings/TabSAPdata'
+import TabScheduleAtoF from 'src/views/account-settings/TabScheduleAtoF'
+import TabMilestone from 'src/views/account-settings/TabMilestone'
+import TabSAPConfig from 'src/views/account-settings/TabSAPconfig'
 import TabInfo from 'src/views/account-settings/TabInfo'
+import TabProject from 'src/views/account-settings/TabProject'
 import TabAccount from 'src/views/account-settings/TabAccount'
 import TabSecurity from 'src/views/account-settings/TabSecurity'
 
-// ** Third Party Styles Imports
+// ** Third Party Styles ImportsTabAccount.js
 import 'react-datepicker/dist/react-datepicker.css'
-import TabProject from 'src/views/account-settings/TabProject'
+
 
 const Tab = styled(MuiTab)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
@@ -49,7 +57,7 @@ const TabName = styled('span')(({ theme }) => ({
 
 const AccountSettings = () => {
   // ** State
-  const [value, setValue] = useState('project')
+  const [value, setValue] = useState('tenderconfig')
 
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -69,56 +77,81 @@ const AccountSettings = () => {
         >
 
           <Tab
-            value='project'
+          value='tenderconfig'
+          label={
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <AccountOutline />
+              <TabName>Tender config</TabName>
+            </Box>
+          }
+        />
+          <Tab
+            value='tenderdates'
             label={
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <AccountOutline />
-                <TabName>Project</TabName>
+                <TabName>Tender Dates</TabName>
               </Box>
             }
           />
           <Tab
-            value='account'
-            label={
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <AccountOutline />
-                <TabName>Basic Nit</TabName>
-              </Box>
-            }
-          />
-          <Tab
-            value='single stage'
+            value='terms'
             label={
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <LockOpenOutline />
-                <TabName>Single Stage</TabName>
+                <TabName>Terms</TabName>
               </Box>
             }
           />
           <Tab
-            value='2 or 3 bid stage'
+            value='SAP data'
             label={
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <InformationOutline />
-                <TabName>2 or 3 Bid Stage</TabName>
+                <TabName>SAP data</TabName>
+              </Box>
+            }
+          />
+          <Tab
+            value='Schedule A to F'
+            label={
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <InformationOutline />
+                <TabName>Schedule A to F</TabName>
+              </Box>
+            }
+          />
+          <Tab
+            value='Milestone'
+            label={
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <InformationOutline />
+                <TabName>Milestone</TabName>
               </Box>
             }
           />
         </TabList>
 
-        <TabPanel sx={{ p: 0 }} value='project'>
-          <TabProject/>
+        <TabPanel sx={{ p: 0 }} value='tenderconfig'>
+          <TabTenderConfig />
         </TabPanel>
 
-        <TabPanel sx={{ p: 0 }} value='account'>
-          <TabAccount />
+        <TabPanel sx={{ p: 0 }} value='tenderdates'>
+          <TabTenderDates/>
         </TabPanel>
 
-        <TabPanel sx={{ p: 0 }} value='single stage'>
-          <TabSecurity />
+        <TabPanel sx={{ p: 0 }} value='terms'>
+          <TabTerms/>
         </TabPanel>
-        <TabPanel sx={{ p: 0 }} value='2 or 3 bid stage'>
-          <TabInfo />
+
+        <TabPanel sx={{ p: 0 }} value='SAP data'>
+          <TabSAPdata/>
+        </TabPanel>
+        <TabPanel sx={{ p: 0 }} value='Schedule A to F'>
+          <TabScheduleAtoF />
+        </TabPanel>
+        <TabPanel sx={{ p: 0 }} value='Milestone'>
+          <TabMilestone />
         </TabPanel>
       </TabContext>
       <Popup/>

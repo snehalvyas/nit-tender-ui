@@ -22,28 +22,32 @@ const Popup = () => {
   // States
   const [open, setOpen] = useState(true)
 
+
   const handleClickOpen = () => setOpen(true)
 
   const handleClose = () => setOpen(false)
 
   return (
-    <>
-      <Dialog open={open} onClose={handleClose} aria-labelledby='form-dialog-title'>
+
+      <Dialog open={open} fullWidth  onClose={handleClose} aria-labelledby='form-dialog-title'>
         <DialogTitle id='form-dialog-title'>Project</DialogTitle>
         <DialogContent>
-          <DialogContentText className='mb-3' sx={{marginBottom:5}}>
-           Please Choose Project and Package for NIT Tender
+          <DialogContentText className='mb-3'  sx={{marginBottom:5}}>
+
+            Please Choose Project and Package for NIT Tender
+
           </DialogContentText>
           <Grid container spacing={7}>
             <Grid item lg={6}>
               <FormControl fullWidth>
-                <InputLabel id='form-layouts-separator-select-label'>Project</InputLabel>
+                <InputLabel id='form-layouts-separator-select-label-project'>Project</InputLabel>
                 <Select
                   label='Project ID'
-                  defaultValue=''
-                  id='form-layouts-separator-select'
-                  labelId='form-layouts-separator-select-label'
+                  defaultValue='--Select Project--'
+                  id='form-layouts-separator-select-project'
+                  labelId='form-layouts-separator-select-label-project'
                 >
+                  <MenuItem value='--Select Project--'>--Select Project--</MenuItem>
                   <MenuItem value='PRJ2022-001'>PRJ2022-001</MenuItem>
                   <MenuItem value='PRJ2022-002'>PRJ2022-002</MenuItem>
                   <MenuItem value='PRJ2022-003'>PRJ2022-003</MenuItem>
@@ -55,30 +59,27 @@ const Popup = () => {
             <Grid item lg={6}>
 
               <FormControl fullWidth>
-                <InputLabel id='form-layouts-separator-select-label'>Package</InputLabel>
+                <InputLabel id='form-layouts-separator-select-label-package'>Package</InputLabel>
                 <Select
                   label='Project ID'
-                  defaultValue=''
-                  id='form-layouts-separator-select'
-                  labelId='form-layouts-separator-select-label'
+                  defaultValue='--Select Package--'
+                  id='form-layouts-separator-select-package'
+                  labelId='form-layouts-separator-select-label-package'
                 >
+                  <MenuItem value='--Select Package--'>--Select Package--</MenuItem>
                   <MenuItem value='Basic'>Basic</MenuItem>
                   <MenuItem value='Standard'>Standard</MenuItem>
                   <MenuItem value='Premium'>Premium</MenuItem>
                 </Select>
               </FormControl>
-
             </Grid>
           </Grid>
 
-
         </DialogContent>
         <DialogActions className='dialog-actions-dense'>
-          {/*<Button onClick={handleClose}>Disagree</Button>*/}
           <Button onClick={handleClose}>OK</Button>
         </DialogActions>
       </Dialog>
-    </>
   )
 }
 

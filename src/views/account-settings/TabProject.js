@@ -26,10 +26,12 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 import HomeOutline from 'mdi-material-ui/HomeOutline'
 
+
+
 // Styled component for Accordion component
 
 const Accordion = styled(MuiAccordion)(({ theme }) => ({
-  boxShadow: 'none !important',
+  bosxhadow: 'none !important',
   border: `1px solid ${theme.palette.divider} !important`,
   overflow: 'hidden',
   '&:not(:last-of-type)': {
@@ -78,7 +80,7 @@ const TabProject = () => {
 
   return (
     <Grid container spacing={7}>
-      <Grid item lg={12} sx={{ marginTop: 4.8, marginLeft:4.8, marginRight:4.8,marginBottom:0}}>
+      <Grid item lg={12} sx={{ marginTop: 4.8, marginLeft:4.8, marginRight:4.8, marginBottom:1}}>
         <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
         <AccordionSummary
           id='customized-panel-header-1'
@@ -89,7 +91,7 @@ const TabProject = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Grid container spacing={7}>
-            <Grid item xs={12} lg={6} sx={{marginTop: 4.8,}}>
+            <Grid item sx={12} lg={6} style={{marginTop: 4.8}}>
             <Grid container style={{marginBottom: 5}}>
               <Grid item lg={6}>
                 <Typography variant='h6' sx={{marginTop: 2}}>
@@ -175,8 +177,8 @@ const TabProject = () => {
               </Grid>
 
           </Grid>
-            <Grid item xs={12} lg={6} sx={{marginTop: 4.8, marginBottom: 3}}>
-              <Grid container style={{marginBottom: 5}}>
+            <Grid item sx={12} lg={6} style={{marginTop: 4.8, marginBottom: 3}}>
+              <Grid container sx={{marginBottom: 5}}>
                 <Grid item lg={6}>
                   <Typography variant='h6' sx={{marginTop: 2}}>
                     Package And Description
@@ -187,7 +189,7 @@ const TabProject = () => {
                     Basic Package
                   </Typography>
                 </Grid>
-                <Grid item lg={12} xs={{marginBottom:'50'}}>
+                <Grid item lg={12} sx={{marginBottom:'50'}}>
                   <Typography sx={{marginTop:5}}>
                     The Road Development Project aims to enhance transportation infrastructure by implementing comprehensive improvements to the existing road network. The project encompasses various activities focused on constructing, upgrading, and maintaining roadways to ensure safe and efficient transportation.
                   </Typography>
@@ -199,67 +201,64 @@ const TabProject = () => {
           </Grid>
         </AccordionDetails>
       </Accordion>
-      </Grid>
-      <Grid item lg={12} sx={{marginBottom: 4.8, marginLeft:4.8, marginRight:4.8}}>
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <AccordionSummary
-          id='customized-panel-header-2'
-          expandIcon={expandIcon('panel2')}
-          aria-controls='customized-panel-content-2'
-        >
-          <Typography>NIT</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Grid container spacing={7}>
-            <Grid item xs={12} lg={6} sx={{marginTop: 4.8, marginBottom: 3}}>
-              <Grid container style={{marginBottom: 5}}>
-                <Grid item lg={3}>
-                  <Typography variant='h6' sx={{marginTop: 2}}>
-                    NIT No :
-                  </Typography>
+        <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} sx={{marginBottom: 5}}>
+          <AccordionSummary
+            id='customized-panel-header-2'
+            expandIcon={expandIcon('panel2')}
+            aria-controls='customized-panel-content-2'
+          >
+            <Typography>NIT</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Grid container spacing={7} >
+              <Grid item sx={12} lg={6} style={{marginTop: 4.8}}>
+                <Grid container>
+                  <Grid item lg={3}>
+                    <Typography variant='h6' sx={{marginTop: 2}}>
+                      NIT No :
+                    </Typography>
+                  </Grid>
+                  <Grid item lg={6}  sx={{marginTop: 2}}>
+                    <Chip label='0HDD2024/56/ABCR/2024' color='primary' variant='outlined' />
+                  </Grid>
                 </Grid>
-                <Grid item lg={6}  sx={{marginTop: 2}}>
-                  <Chip label='0HDD2024/56/ABCR/2024' color='primary' variant='outlined' />
+
+                <Grid container  style={{marginBottom: 5, marginTop: 5}}>
+                  <Grid item lg={3} style={{marginBottom: 5, marginTop: 5}}>
+                    <Typography variant='h6' sx={{ marginTop: 5 }}>
+                      Work Description
+                    </Typography>
+                  </Grid>
+                  <Grid item lg={9} style={{marginBottom: 15, marginTop: 5}}>
+                    <Typography variant='subtitle1' sx={{ marginTop: 5 }}>
+                      Road line No 5678AFGD
+                    </Typography>
+                  </Grid>
                 </Grid>
               </Grid>
-
-              <Grid container  style={{marginBottom: 5, marginTop: 5}}>
-                <Grid item lg={3} style={{marginBottom: 5, marginTop: 5}}>
-                  <Typography variant='h6' sx={{ marginTop: 5 }}>
-                    Work Description
-                  </Typography>
-                </Grid>
-                <Grid item lg={9} style={{marginBottom: 15, marginTop: 5}}>
-                  <Typography variant='subtitle1' sx={{ marginTop: 5 }}>
-                    Road line No 5678AFGD
-                  </Typography>
+              <Grid item sx={12} lg={6} style={{marginTop: 4.8, marginBottom: 3}} >
+                <Grid container
+                      style={{marginBottom: 5}}>
+                  <Grid item lg={2}>
+                    <Typography variant='h6'  sx={{ marginTop: 1 }}>
+                      Status
+                    </Typography>
+                  </Grid>
+                  <Grid item lg={10} sx={{marginTop: '5'}}>
+                    <FormControl >
+                      <RadioGroup row defaultValue='male' aria-label='status' name='account-settings-info-radio' sx={{marginTop: '5'}}>
+                        <FormControlLabel value='male' label='Red'  control={<Radio defaultChecked color='error' />}  sx={{marginTop: '5'}} />
+                        <FormControlLabel value='female' label='Green' control={<Radio defaultChecked color='success' />} sx={{marginTop: '5'}} />
+                        <FormControlLabel value='other' label='Black' control={<Radio defaultChecked color='secondary' />} sx={{marginTop: '5'}} />
+                      </RadioGroup>
+                    </FormControl>
+                  </Grid>
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12} lg={6} sx={{marginTop: 4.8, marginBottom: 3}} >
-              <Grid container
-                    style={{marginBottom: 5}}>
-                <Grid item lg={2}>
-                  <Typography variant='h6'  sx={{ marginTop: 1 }}>
-                    Status
-                  </Typography>
-                </Grid>
-                <Grid item lg={10} xs={{marginTop: '5'}}>
-                  <FormControl >
-                    <RadioGroup row defaultValue='male' aria-label='status' name='account-settings-info-radio' xs={{marginTop: '5'}}>
-                      <FormControlLabel value='male' label='Red'  control={<Radio defaultChecked color='error' />}  xs={{marginTop: '5'}} />
-                      <FormControlLabel value='female' label='Green' control={<Radio defaultChecked color='success' />} xs={{marginTop: '5'}} />
-                      <FormControlLabel value='other' label='Black' control={<Radio defaultChecked color='secondary' />} xs={{marginTop: '5'}} />
-                    </RadioGroup>
-                  </FormControl>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </AccordionDetails>
-      </Accordion>
+          </AccordionDetails>
+        </Accordion>
       </Grid>
-
     </Grid>
   )
 }

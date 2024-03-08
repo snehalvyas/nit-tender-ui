@@ -48,7 +48,7 @@ const ResetButtonStyled = styled(Button)(({ theme }) => ({
   }
 }))
 
-const TabAccount = () => {
+const TabTenderDates = () => {
   // ** State
   const [openAlert, setOpenAlert] = useState(true)
   const [imgSrc, setImgSrc] = useState('/images/avatars/1.png')
@@ -63,13 +63,22 @@ const TabAccount = () => {
   }
 
   return (
+
     <CardContent>
+
+
       <form>
         <Grid container spacing={7}>
 
           <TabSAPConfig/>
 
-          <Grid item sx={12} lg={6} style={{ marginTop: 4.8, marginBottom: 3 }}>
+          <Grid container >
+            <Grid item lg={12}>
+              <Divider sx={{ marginTop: 6.5, marginBottom:1, marginRight:0, marginLeft: 7 }} />
+            </Grid>
+          </Grid>
+
+          <Grid item sx={12} lg={6} style={{ marginTop:2, marginBottom: 3 }}>
             <Grid container style={{marginBottom: 5}}>
                  <Grid item lg={6}>
                    <Typography variant='h6' sx={{ marginTop: 2 }}>
@@ -331,4 +340,4 @@ const TabAccount = () => {
   )
 }
 
-export default TabAccount
+export default TabTenderDates
