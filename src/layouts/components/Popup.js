@@ -9,11 +9,14 @@ import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import DialogContentText from '@mui/material/DialogContentText'
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel/InputLabel";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import Grid from "@mui/material/Grid";
+import FormControl from '@mui/material/FormControl'
+
+import InputLabel from '@mui/material/InputLabel'
+import FormControlLabel from '@mui/material/FormControlLabel'
+
+import Select from '@mui/material/Select'
+import MenuItem from '@mui/material/MenuItem'
+import Grid from '@mui/material/Grid'
 
 const Popup = () => {
   // States
@@ -50,6 +53,7 @@ const Popup = () => {
               </FormControl>
             </Grid>
             <Grid item lg={6}>
+
               <FormControl fullWidth>
                 <InputLabel id='form-layouts-separator-select-label'>Package</InputLabel>
                 <Select
@@ -63,6 +67,7 @@ const Popup = () => {
                   <MenuItem value='Premium'>Premium</MenuItem>
                 </Select>
               </FormControl>
+
             </Grid>
           </Grid>
 

@@ -16,13 +16,13 @@ import InputLabel from '@mui/material/InputLabel'
 import MuiAccordion from '@mui/material/Accordion'
 import MuiAccordionSummary from '@mui/material/AccordionSummary'
 import MuiAccordionDetails from '@mui/material/AccordionDetails'
-import FormControl from "@mui/material/FormControl";
+import FormControl from '@mui/material/FormControl'
 import Chip from '@mui/material/Chip'
 import LockOpenOutline from 'mdi-material-ui/LockOpenOutline'
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
-import FormLabel from "@mui/material/FormLabel";
-import FormControlLabel from "@mui/material/FormControlLabel/FormControlLabel";
+import FormLabel from '@mui/material/FormLabel'
+import FormControlLabel from '@mui/material/FormControlLabel'
 import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
 import HomeOutline from 'mdi-material-ui/HomeOutline'
 
@@ -31,7 +31,6 @@ import HomeOutline from 'mdi-material-ui/HomeOutline'
 const Accordion = styled(MuiAccordion)(({ theme }) => ({
   boxShadow: 'none !important',
   border: `1px solid ${theme.palette.divider} !important`,
-  borderRadius: '10 !important',
   overflow: 'hidden',
   '&:not(:last-of-type)': {
     borderBottom: '0 !important'
@@ -67,7 +66,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 
 
-const AccordionCustomized = () => {
+const TabProject = () => {
   // States
   const [expanded, setExpanded] = useState('panel1')
 
@@ -78,7 +77,7 @@ const AccordionCustomized = () => {
   const expandIcon = value => <i className={expanded === value ? 'ri-subtract-line' : 'ri-add-line'} />
 
   return (
-    <Grid container spacing={7} >
+    <Grid container spacing={7}>
       <Grid item lg={12} sx={{ marginTop: 4.8, marginLeft:4.8, marginRight:4.8,marginBottom:0}}>
         <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
         <AccordionSummary
@@ -102,7 +101,7 @@ const AccordionCustomized = () => {
                   <InputLabel id='form-layouts-separator-select-label'>Project ID</InputLabel>
                   <Select
                     label='Project ID'
-                    defaultValue=''
+                    defaultValue='PRJ2022-001'
                     id='form-layouts-separator-select'
                     labelId='form-layouts-separator-select-label'
                   >
@@ -266,5 +265,5 @@ const AccordionCustomized = () => {
 }
 
 
-export default AccordionCustomized
+export default TabProject
 

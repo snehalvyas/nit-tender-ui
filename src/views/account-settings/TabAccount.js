@@ -19,8 +19,9 @@ import FormControl from '@mui/material/FormControl'
 import Button from '@mui/material/Button'
 
 // ** Icons Imports
+
 import Close from 'mdi-material-ui/Close'
-import Divider from "@mui/material/Divider";
+import Divider from '@mui/material/Divider'
 
 const ImgStyled = styled('img')(({ theme }) => ({
   width: 120,
@@ -311,9 +312,6 @@ const TabAccount = () => {
               </Select>
             </FormControl>
           </Grid>
-
-
-
 
           <Grid item xs={12} style={{marginTop: 15}}>
             <Button variant='contained' sx={{ marginRight: 3.5 }}>

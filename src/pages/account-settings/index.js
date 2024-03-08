@@ -10,7 +10,7 @@ import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import { styled } from '@mui/material/styles'
 import MuiTab from '@mui/material/Tab'
-import Popup from '../../layouts/components/Popup'
+import Popup from 'src/layouts/components/Popup'
 
 
 // ** Icons Imports
@@ -25,7 +25,7 @@ import TabSecurity from 'src/views/account-settings/TabSecurity'
 
 // ** Third Party Styles Imports
 import 'react-datepicker/dist/react-datepicker.css'
-import TabProject from "../../views/account-settings/TabProject";
+import TabProject from 'src/views/account-settings/TabProject'
 
 const Tab = styled(MuiTab)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
